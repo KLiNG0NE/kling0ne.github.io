@@ -1,4 +1,10 @@
 /* Seitenweise Angaben */
+html {
+  font-family: Georgia, 'Times New Roman', serif; /* Schriftart */
+}
+
 body {
-  font-family: Georgia, 'Times New Roman', serif;
+  color: white;
+  background-color: black;
+  max-width: 1200px
 }
