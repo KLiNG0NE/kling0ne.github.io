@@ -7,7 +7,11 @@ html {
 
 body {
   color: white; /* Farbe der Schriftart */
-  background-color: black; /* Farbe des Hintergrunds */
+  background-color: #1C1B22; /* Farbe des Hintergrunds */
   max-width: 1200px; /* Breite maximal */
   margin: 0 auto; /* Rand oben/unten 0, rechts/links automatisch */
+}
+
+h1 {
+  margin-top: 0;
 }
