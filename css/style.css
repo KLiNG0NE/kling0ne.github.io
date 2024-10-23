@@ -11,6 +11,7 @@ body {
   max-width: 1200px; /* Breite maximal */
   min-height: 100vh;
   margin: 0 auto; /* Rand oben/unten 0, rechts/links automatisch */
+  padding: .5em; /* Polsterung */
 }
 
 /* Überschrift */
