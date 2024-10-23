@@ -34,7 +34,7 @@ a:active  { background-color: black; color: lightgray; }
 /* Fußbereich */
 footer {
   position: fixed; bottom: 0px;
-  width: 100%;
+  margin: 0 auto; /* Rand oben/unten 0, rechts/links automatisch */
   font-family: monospace;
   font-size: .9em;
   letter-spacing: 0.1em;
