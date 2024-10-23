@@ -1,10 +1,13 @@
 /* Seitenweise Angaben */
 html {
   font-family: Georgia, 'Times New Roman', serif; /* Schriftart */
+  color: black; /* Farbe der Schriftart */
+  background-color: white; /* Farbe des Hintergrunds */
 }
 
 body {
-  color: white;
-  background-color: black;
-  max-width: 1200px
+  color: white; /* Farbe der Schriftart */
+  background-color: black; /* Farbe des Hintergrunds */
+  max-width: 1200px; /* Breite maximal */
+  margin: 0 auto; /* Rand oben/unten 0, rechts/links automatisch */
 }
