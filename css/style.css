@@ -17,6 +17,7 @@ h1 {
   margin-top: 0;
 }
 
-footer p {
+footer {
+  font-family: monospace;
   font-size: .8em;
 }
