@@ -13,10 +13,18 @@ body {
   margin: 0 auto; /* Rand oben/unten 0, rechts/links automatisch */
 }
 
+/* Überschrift */
 h1 {
   margin-top: 0;
 }
 
+/* Links */
+a         { background-color: black; color: lightblue; }
+a:focus   { background-color: black; color: lightgray; }
+a:hover   { background-color: dimgray; color: lightgray; }
+a:active  { background-color: black; color: lightgray; }
+
+/* Fußbereich */
 footer {
   font-family: monospace;
   font-size: .9em;
