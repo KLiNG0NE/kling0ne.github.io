@@ -1,8 +1,8 @@
 /* Seitenweise Angaben */
 html {
   font-family: Georgia, 'Times New Roman', serif; /* Schriftart */
-  color: #393943; /* Farbe der Schriftart */
-  background-color: white; /* Farbe des Hintergrunds */
+  color: white; /* Farbe der Schriftart */
+  background-color: #393943; /* Farbe des Hintergrunds */
 }
 
 body {
