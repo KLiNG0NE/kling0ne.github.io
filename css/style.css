@@ -20,9 +20,9 @@ h1 {
 }
 
 /* Links */
-a         { background-color: black; color: lightblue; }
+a         { background-color: black; color: lightblue; text-decoration: none; }
 a:focus   { background-color: black; color: lightgray; }
-a:hover   { background-color: dimgray; color: lightgray; }
+a:hover   { background-color: dimgray; color: lightgray; text-decoration: underline; }
 a:active  { background-color: black; color: lightgray; }
 
 /* Fußbereich */
