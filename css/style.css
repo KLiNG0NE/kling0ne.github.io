@@ -3,7 +3,7 @@ html {
   font-family: Georgia, 'Times New Roman', serif; /* Schriftart */
   color: white; /* Farbe der Schriftart */
   background-color: #393943; /* Farbe des Hintergrunds */
-  background-image: url(background.png);
+  background-image: url(../img/background.png);
 }
 
 body {
