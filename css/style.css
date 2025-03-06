@@ -8,7 +8,7 @@ html {
 
 body {
   color: white; /* Farbe der Schriftart */
-  background-color: #1C1B22; /* Farbe des Hintergrunds */
+  background-color: #1C1B22E0; /* Farbe des Hintergrunds */
   max-width: 1200px; /* Breite maximal */
   min-height: 100vh; /* Höhe */
   margin: 0 auto; /* Rand oben/unten 0, rechts/links automatisch */
