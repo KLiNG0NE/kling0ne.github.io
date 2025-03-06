@@ -13,6 +13,7 @@ body {
   min-height: 100vh; /* Höhe */
   margin: 0 auto; /* Rand oben/unten 0, rechts/links automatisch */
   padding: .5em; /* Polsterung */
+  backdrop-filter: blur(8px); /* Filter: Unschärfe */
 }
 
 /* Überschrift */
@@ -20,6 +21,7 @@ h1 {
   margin-top: 0;
 }
 
+/* Absatz */
 p {
   letter-spacing: 0.1em;
   word-spacing: 0.1em;
