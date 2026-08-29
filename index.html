@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="KLiNG0NE — Klingonischer Full-Stack-Entwickler. Portfolio mit Fokus auf Frontend, Backend, Systemarchitektur und DevOps.">
+    <meta name="description" content="KLiNG0NE&nbsp;— AI-Developer&nbsp;· Code Warrior&nbsp;· AI-Image-Artist">
     <meta name="author" content="KLiNG0NE">
     <meta name="theme-color" content="#0a0a0e">
     <meta name="robots" content="index, follow">
@@ -11,18 +11,18 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kling0ne.github.io/">
-    <meta property="og:title" content="KLiNG0NE — Klingon Developer">
-    <meta property="og:description" content="Full-Stack-Entwickler mit Klingon-Feeling. Ehre, Stärke und Perfektion im Code.">
-    <meta property="og:image" content="https://kling0ne.github.io/og-image.png">
+    <meta property="og:title" content="KLiNG0NE&nbsp;— AI-Developer">
+    <meta property="og:description" content="KLiNG0NE&nbsp;— AI-Developer&nbsp;· Code Warrior&nbsp;· AI-Image-Artist">
+    <meta property="og:image" content="https://kling0ne.github.io/og-image.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://kling0ne.github.io/">
-    <meta name="twitter:title" content="KLiNG0NE — Klingon Developer">
-    <meta name="twitter:description" content="Full-Stack-Entwickler mit Klingon-Feeling. Ehre, Stärke und Perfektion im Code.">
-    <meta name="twitter:image" content="https://kling0ne.github.io/og-image.png">
+    <meta name="twitter:title" content="KLiNG0NE&nbsp;— AI-Developer">
+    <meta name="twitter:description" content="KLiNG0NE&nbsp;— AI-Developer&nbsp;· Code Warrior&nbsp;· AI-Image-Artist">
+    <meta name="twitter:image" content="https://kling0ne.github.io/og-image.jpg">
 
-    <title>KLiNG0NE — Klingon Developer</title>
+    <title>KLiNG0NE&nbsp;— AI-Developer</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%26%23x2694%3B%3C/text%3E%3C/svg%3E">
 
     <!-- Preconnect for Google Fonts -->
@@ -412,6 +412,7 @@
         }
 
         .contact-link {
+            position: relative;
             padding: 1.5rem 2.5rem;
             border: 1px solid rgba(200,164,25,0.3);
             color: var(--klingon-gold);
@@ -419,6 +420,55 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 0.9rem; letter-spacing: 1px;
             transition: background 0.3s, border-color 0.3s;
+        }
+
+        /* Custom tooltip on hover */
+        .contact-link::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: calc(100% + 0.8rem);
+            left: 50%;
+            transform: translateX(-50%) translateY(4px);
+            background: var(--klingon-steel);
+            color: var(--klingon-gold);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--klingon-gold);
+            border-radius: 2px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 1s ease, transform 1s ease;
+            z-index: 10;
+        }
+
+        /* Small triangle arrow below tooltip */
+        .contact-link::before {
+            content: '';
+            position: absolute;
+            top: calc(100% + 0.3rem);
+            left: 50%;
+            transform: translateX(-50%) translateY(4px);
+            border: 5px solid transparent;
+            border-bottom: 5px solid var(--klingon-gold);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            z-index: 10;
+        }
+
+        .contact-link:hover::after,
+        .contact-link:focus::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .contact-link:hover::before,
+        .contact-link:focus::before {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
         }
 
         .contact-link:hover,
@@ -680,14 +730,14 @@
         </p>
 
         <div class="contact-links">
-            <a href="mailto:kling0ne@example.com" title="E-Mail senden" class="contact-link" aria-label="E-Mail an KLiNG0NE senden">&#x2709; E-MAIL</a>
-            <a href="https://github.com/kling0ne" title="github.com" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="GitHub Profil von KLiNG0NE">
+            <a href="mailto:kling0ne@example.com" data-tooltip="E-Mail senden" class="contact-link" aria-label="E-Mail an KLiNG0NE senden">&#x2709; E-MAIL</a>
+            <a href="https://github.com/kling0ne" data-tooltip="github.com" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="GitHub Profil von KLiNG0NE">
                 &#x2328; GITHUB
             </a>
-            <a href="https://www.youtube.com/@KLiNG0N3" title="youtube.com" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="YouTube-Kanal von KLiNG0NE">
+            <a href="https://www.youtube.com/@KLiNG0N3" data-tooltip="www.youtube.com" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="YouTube-Kanal von KLiNG0NE">
                 &#9654; YOUTUBE
             </a>
-            <a href="https://www.twitch.tv/kling0n3" title="twitch.tv" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Twitch-Kanal von KLiNG0NE">
+            <a href="https://www.twitch.tv/kling0n3" data-tooltip="www.twitch.tv" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Twitch-Kanal von KLiNG0NE">
                 &#128377; TWITCH
             </a>
         </div>
