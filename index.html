@@ -1,52 +1,753 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Website von KLiNG0NE auf GitHub">
-        <meta name="keywords" content="KLiNG0NE, klingone, kling0n3, GitHub">
-        <meta name="robots" content="index,follow">
-        <title>KLiNG0NE – GitHub</title>
-        <link rel="icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <!-- Sichtbarer Bereich der Website -->
-    <body>
-        <!-- Kopfbereich der Website -->
-        <header>
-            <h1>KLiNG0NE – GitHub</h1>
-        </header>
-        <!-- Hauptbereich der Website -->
-        <main>
-            <h2>kling0ne.github.io – Website</h2>
-            <p>
-                Willkommen auf der GitHub-Website von KLiNG0NE.
-            </p>
-            <h3>GitHub-Profil</h3>
-            <p>
-                Repo: <a href="https://github.com/KLiNG0NE/">github.com/KLiNG0NE/</a>
-            </p>
-            <h3>GitHub-Repositorys</h3>
-            <p>
-                Übersicht der Repositorys auf GitHub
-            </p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KLiNG0NE — Klingonischer Full-Stack-Entwickler. Portfolio mit Fokus auf Frontend, Backend, Systemarchitektur und DevOps.">
+    <meta name="author" content="KLiNG0NE">
+    <meta name="theme-color" content="#0a0a0e">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kling0ne.github.io/">
+    <meta property="og:title" content="KLiNG0NE — Klingon Developer">
+    <meta property="og:description" content="Full-Stack-Entwickler mit Klingon-Feeling. Ehre, Stärke und Perfektion im Code.">
+    <meta property="og:image" content="https://kling0ne.github.io/og-image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://kling0ne.github.io/">
+    <meta name="twitter:title" content="KLiNG0NE — Klingon Developer">
+    <meta name="twitter:description" content="Full-Stack-Entwickler mit Klingon-Feeling. Ehre, Stärke und Perfektion im Code.">
+    <meta name="twitter:image" content="https://kling0ne.github.io/og-image.png">
+
+    <title>KLiNG0NE — Klingon Developer</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%26%23x2694%3B%3C/text%3E%3C/svg%3E">
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=Rajdhani:wght@400;600&amp;family=Fira+Code:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <style>
+        /* ==================== RESET & BASE ==================== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --klingon-gold: #c8a419;
+            --klingon-red: #b21010;
+            --klingon-crimson: #d43333;
+            --klingon-dark: #0a0a0e;
+            --klingon-steel: #1a1a24;
+            --klingon-gray: #2a2a36;
+            --klingon-light: #e8dcc0;
+            --klingon-dim: #8a7a5a;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--klingon-dark);
+            color: var(--klingon-light);
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Skip Navigation Link (Accessibility) */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            background: var(--klingon-gold);
+            color: var(--klingon-dark);
+            padding: 0.5rem 1rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            z-index: 200;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* ==================== KLINON PATTERN BACKGROUND ==================== */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image:
+                radial-gradient(circle at 25% 30%, rgba(200,164,25,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 75% 70%, rgba(178,16,16,0.03) 0%, transparent 50%),
+                repeating-linear-gradient(90deg, transparent 0px, transparent 200px, rgba(200,164,25,0.01) 200px, rgba(200,164,25,0.01) 201px),
+                repeating-linear-gradient(0deg, transparent 0px, transparent 200px, rgba(200,164,25,0.01) 200px, rgba(200,164,25,0.01) 201px);
+        }
+
+        /* ==================== KLINON BORDER PATTERN (SVG-based) ==================== */
+        .klingon-border {
+            position: relative;
+            border: 2px solid var(--klingon-gold);
+            background: linear-gradient(135deg, rgba(26,26,36,0.9), rgba(10,10,14,0.9));
+        }
+
+        .klingon-border::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, var(--klingon-gold), transparent 30%, transparent 70%, var(--klingon-red));
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* ==================== NAVIGATION ==================== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(10,10,14,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--klingon-gold);
+            padding: 0.8rem 2rem;
+            z-index: 100;
+        }
+
+        nav .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--klingon-gold);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        nav .logo span { color: var(--klingon-red); }
+
+        nav ul { list-style: none; display: flex; gap: 1.5rem; }
+
+        nav ul a {
+            color: var(--klingon-dim);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav ul a:hover,
+        nav ul a:focus {
+            color: var(--klingon-gold);
+            text-shadow: 0 0 10px rgba(200,164,25,0.5);
+            outline: none;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 2rem 4rem;
+        }
+
+        /* Animated background particles */
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            background-image: radial-gradient(circle, var(--klingon-gold) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.15;
+            animation: particleDrift 20s linear infinite;
+        }
+
+        @keyframes particleDrift {
+            to { transform: translateX(60px) translateY(-30px); }
+        }
+
+        /* Klingon bird of prey silhouette */
+        .hero .bird-of-prey {
+            position: absolute;
+            bottom: -2rem; left: 50%;
+            transform: translateX(-50%);
+            width: 600px; height: 300px;
+            opacity: 0.04;
+            z-index: -1;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 300'%3E%3Cpath d='M300,20 L260,60 L100,80 L30,140 L60,130 L20,160 L60,170 L30,200 L100,170 L180,160 L220,200 L300,280 L380,200 L420,160 L500,170 L570,200 L540,170 L580,160 L540,130 L570,140 L390,80 L330,60 Z' fill='%23c8a419'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: contain;
+        }
+
+        .hero-content { max-width: 800px; }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            color: var(--klingon-gold);
+            letter-spacing: 4px;
+            text-shadow: 0 0 30px rgba(200,164,25,0.3), 0 0 60px rgba(200,164,25,0.1);
+        }
+
+        .hero h1 span { color: var(--klingon-red); text-shadow: 0 0 30px rgba(178,16,16,0.4); }
+
+        .hero .subtitle {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--klingon-dim);
+            margin-top: 1rem;
+            letter-spacing: 3px;
+        }
+
+        .hero .tagline {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.1rem;
+            color: var(--klingon-light);
+            margin-top: 2rem;
+            opacity: 0.8;
+        }
+
+        /* Klingon warrior quote */
+        .hero .quote {
+            margin-top: 3rem;
+            padding: 1.5rem 2rem;
+            border-left: 4px solid var(--klingon-red);
+            background: rgba(178,16,16,0.05);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--klingon-dim);
+        }
+
+        .hero .quote em {
+            display: block;
+            margin-top: 0.5rem;
+            color: var(--klingon-gold);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            font-style: normal;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem; left: 50%; transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 24px; height: 24px;
+            fill: none; stroke: var(--klingon-gold);
+            stroke-width: 2; opacity: 0.5;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.3; }
+            50% { transform: translateX(-50%) translateY(10px); opacity: 0.8; }
+        }
+
+        /* ==================== SECTIONS (common) ==================== */
+        section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+
+        section h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--klingon-gold);
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+
+        section .section-line {
+            width: 80px; height: 3px;
+            background: linear-gradient(90deg, var(--klingon-red), var(--klingon-gold));
+            margin-bottom: 2rem;
+        }
+
+        /* ==================== ABOUT SECTION ==================== */
+        #about { text-align: center; }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem; margin-top: 2rem;
+        }
+
+        .about-card {
+            padding: 2rem;
+            border-left: 4px solid var(--klingon-gold);
+            background: linear-gradient(135deg, rgba(26,26,36,0.8), rgba(10,10,14,0.8));
+        }
+
+        .about-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--klingon-red);
+            letter-spacing: 2px; margin-bottom: 1rem;
+        }
+
+        .about-card p, .about-card li {
+            color: var(--klingon-dim); font-size: 0.95rem; line-height: 1.8;
+        }
+
+        /* ==================== PROJECTS SECTION ==================== */
+        #projects { background: linear-gradient(180deg, transparent, rgba(178,16,16,0.02), transparent); }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem; margin-top: 2rem;
+        }
+
+        .project-card {
+            padding: 2rem;
+            border: 1px solid rgba(200,164,25,0.2);
+            background: linear-gradient(135deg, rgba(26,26,36,0.9), rgba(10,10,14,0.9));
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--klingon-gold);
+            box-shadow: 0 10px 30px rgba(200,164,25,0.1);
+        }
+
+        .project-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--klingon-gold); margin-bottom: 0.5rem; letter-spacing: 1px;
+        }
+
+        .project-card .tech-stack {
+            display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;
+        }
+
+        .project-card .tag {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem; padding: 0.2rem 0.6rem; letter-spacing: 1px;
+            border: 1px solid var(--klingon-red); color: var(--klingon-red);
+        }
+
+        .project-card p {
+            color: var(--klingon-dim); font-size: 0.95rem; line-height: 1.7;
+        }
+
+        /* ==================== SKILLS SECTION (Warrior Readiness) ==================== */
+
+        .skill-bars { margin-top: 2rem; }
+
+        .skill-item {
+            display: grid;
+            grid-template-columns: 200px 1fr 60px; gap: 1rem; align-items: center;
+            padding: 1rem 0;
+        }
+
+        .skill-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem; color: var(--klingon-light); letter-spacing: 1px;
+        }
+
+        .skill-bar-track {
+            height: 12px; background: rgba(42,42,54,0.5); border-radius: 6px; overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%; border-radius: 6px; width: 0;
+            transition: width 1s ease-in-out;
+        }
+
+        .skill-bar-fill.gold { background: linear-gradient(90deg, var(--klingon-gold), #e8c44a); }
+        .skill-bar-fill.red { background: linear-gradient(90deg, var(--klingon-red), var(--klingon-crimson)); }
+
+        .skill-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem; color: var(--klingon-dim); text-align: right;
+        }
+
+        /* ==================== CODE TERMINAL (Klingon Terminal) ==================== */
+        .terminal {
+            margin-top: 3rem; padding: 1.5rem 2rem;
+            border: 1px solid var(--klingon-steel);
+            background: #0d0d14;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .terminal-header {
+            display: flex; gap: 0.5rem; margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--klingon-steel);
+        }
+
+        .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .terminal-dot.red { background: #ff4a4a; }
+        .terminal-dot.yellow { background: #ffbf4a; }
+        .terminal-dot.green { background: #4aff4a; }
+
+        .terminal-header span {
+            margin-left: 1rem; font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem; color: var(--klingon-dim); letter-spacing: 1px;
+        }
+
+        .terminal-body pre {
+            white-space: pre-wrap; word-break: break-all; line-height: 1.8;
+        }
+
+        .terminal-body .prompt { color: var(--klingon-gold); }
+        .terminal-body .command { color: var(--klingon-light); }
+        .terminal-body .output { color: var(--klingon-dim); font-style: italic;}
+        .terminal-body .highlight { color: var(--klingon-red); }
+
+        /* ==================== CONTACT SECTION ==================== */
+        #contact { text-align: center; }
+
+        .contact-links {
+            display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;
+        }
+
+        .contact-link {
+            padding: 1.5rem 2.5rem;
+            border: 1px solid rgba(200,164,25,0.3);
+            color: var(--klingon-gold);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem; letter-spacing: 1px;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .contact-link:hover,
+        .contact-link:focus {
+            background: rgba(200,164,25,0.1);
+            border-color: var(--klingon-gold);
+            outline: none;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            text-align: center; padding: 3rem 2rem;
+            border-top: 1px solid rgba(200,164,25,0.1);
+            background: rgba(10,10,14,0.9);
+        }
+
+        footer p {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem; color: var(--klingon-dim); letter-spacing: 1px;
+        }
+
+        footer p a {
+            color: var(--klingon-gold);
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        footer p a:hover,
+        footer p a:focus {
+            color: var(--klingon-light);
+            text-shadow: 0 0 8px rgba(200,164,25,0.4);
+            outline: none;
+        }
+
+        /* ==================== KLINON PATTERN DIVIDER ==================== */
+        .divider {
+            height: 4px; margin: 0 auto; max-width: 1200px;
+            background: linear-gradient(90deg, transparent, var(--klingon-gold), var(--klingon-red), var(--klingon-gold), transparent);
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0);} }
+
+        .animate-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            section { padding: 4rem 1.5rem; }
+            .skill-item { grid-template-columns: 1fr; gap: 0.3rem; }
+            .project-grid { grid-template-columns: 1fr; }
+        }
+
+    </style>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "KLiNG0NE",
+        "url": "https://kling0ne.github.io/",
+        "jobTitle": "Website-Developer",
+        "description": "AI-Developer, Open Source, Tipps und Tricks",
+        "sameAs": [
+            "https://github.com/kling0ne",
+            "https://www.youtube.com/@KLiNG0N3",
+            "https://twitter.com/kling0ne"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip Navigation Link (Accessibility) -->
+    <a href="#home" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav aria-label="Hauptnavigation">
+        <div class="nav-inner">
+            <a href="#home" class="logo">KL<span>i</span>NG<span>0NE</span></a>
             <ul>
-                <li><a href="https://github.com/KLiNG0NE/Tipps-und-Tricks">Tipps-und-Tricks</a></li>
-                <li><a href="https://github.com/KLiNG0NE/Home_Assistant_17TRACK_deutsch">Home_Assistant_17TRACK_deutsch</a></li>
-                <li><a href="https://github.com/KLiNG0NE/HTML-Kopiervorlagen">HTML-Kopiervorlagen</a></li>
+                <li><a href="#about">ÜBER MICH</a></li>
+                <li><a href="#projects">PROJEKTE</a></li>
+                <li><a href="#skills">FÄHIGKEITEN</a></li>
+                <li><a href="#contact">KONTAKT</a></li>
             </ul>
-        </main>
-        <!-- Horizontale Linie -->
-        <hr>
-        <!-- Fußbereich der Website -->
-        <footer>
-            <p>
-                Sehen Sie sich den Quellcode dieser Seite an. <kbd>(Kontextmenu: Seitenquelltext anzeigen)</kbd><br>
-                Den gesamten Quelltext mit Kommentaren finden Sie auf dem öffentlichen GitHub-Repository.
-            </p>
-            <p>
-                Diese Website wird von GitHub bereitgestellt – This website is hosted by GitHub.
-            </p>
-        </footer>
-    </body>
+        </div>
+    </nav>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main id="main">
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-particles" id="hero-particles"></div>
+        <div class="bird-of-prey" aria-hidden="true"></div>
+        <div class="hero-content">
+            <h1>KL<span>i</span>NG<span>0NE</span></h1>
+            <p class="subtitle">AI-DEVELOPER · CODE WARRIOR · AI IMAGE ARTIST</p>
+            <p class="tagline">"Guter Code braucht keine Dokumentation&nbsp;– er braucht Kriegernamen!"</p>
+
+            <div class="quote">
+                <em>"bortaS bIr jablu’DI’ reH QaQqu’ nay’ — Rache ist ein Gericht, das man kalt serviert."</em>
+                — Klingonisches Sprichwort
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <div class="divider"></div>
+    <section id="about">
+        <h2>ÜBER MICH</h2>
+        <div class="section-line"></div>
+        <p style="color: var(--klingon-dim); font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+            Ich bin ein leidenschaftlicher AI-Web-Entwickler mit einer unerschütterlichen Liebe zur Klingonen-Kultur.
+            Wie die Klingonen glaube ich an Ehre, Stärke und die Suche nach Perfektion — sei es auf dem Schlachtfeld oder im Code.
+        </p>
+
+        <div class="about-grid">
+            <div class="about-card">
+                <h3>&#x1F3B9; MEINE MISSION</h3>
+                <p>Von der Ehre der Klingonen inspiriert, schreibe ich Software mit Präzision und Kraft.
+                Jede Zeile Code ist ein Schritt auf dem Weg zur technologischen Überlegenheit.</p>
+            </div>
+            <div class="about-card">
+                <h3>&#x26A0; MEINE PHILOSOPHIE</h3>
+                <p>"He who lives by the sword, dies by the sword." — Aber wer lebt durch Code?
+                Code ist das wahre Klingonen-Schwert. Er bietet unendliche Kraft und Ehre.</p>
+            </div>
+            <div class="about-card">
+                <h3>&#x2728; MEINE LEIDENSCHAFT</h3>
+                <p>Von Algorithmen bis Architekturen, von Frontend zu Backend — ich kämpfe für sauberen Code
+                wie ein Klingone für die Ehre. Jeder Bug ist ein Feind, der zu besiegen ist.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <div class="divider"></div>
+    <section id="projects">
+        <h2>PROJEKTE</h2>
+        <div class="section-line"></div>
+        <p style="color: var(--klingon-dim); margin-bottom: 1rem;">Meine Kampagnen im Reich des Codens:</p>
+
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>&#x26A0; TIPPS UND TRICKS</h3>
+                <p>Dieser Bereich dient mir als persönlicher Spickzettel, auf dem ich nützliche Tipps, Kniffe und Informationen zu verschiedenen Themen festhalte, um sie bei Bedarf schnell wiederzufinden.</p>
+                <div class="tech-stack">
+                    <span class="tag">MD</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">JPEG</span>
+                    <span class="tag">PNG</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>&#9654; M3U-PLAYER</h3>
+                <p>Diese Single-Page-Webanwendung (SPA) stellt online einen Web-Player zur Verfügung, der M3U-Playlisten abspielt. Es können Radio- sowie TV-Programme wiedergegeben werden.</p>
+                <div class="tech-stack">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JAVASCRIPT</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>&#128203; M3U-EDITOR</h3>
+                <p>Ein Editor um M3U-Playlisten zu erstellen und zu Sortieren. Dieser Editor ist für Playlisten gedacht, die TV- und Radio-Programme enthalten. Diese Playliste kann dann z. B. in KODI genutzt werden.</p>
+                <div class="tech-stack">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JAVASCRIPT</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>&#x1F4B2; WARRIOR API GATEWAY</h3>
+                <p>Ein Microservices-Gateway mit advanced rate limiting, circuit breaking,
+                und klingon-inspiriertem Error Handling. Built for battle-tested reliability.</p>
+                <div class="tech-stack">
+                    <span class="tag">GO</span>
+                    <span class="tag">GRPC</span>
+                    <span class="tag">KUBERNETES</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION (Warrior Readiness) ==================== -->
+    <div class="divider"></div>
+    <section id="skills">
+        <h2>KAMPFBEREITSCHAFT</h2>
+        <div class="section-line"></div>
+        <p style="color: var(--klingon-dim); margin-bottom: 1rem;">Meine Fähigkeiten gemessen im Klingonen-Kampfsystem.</p>
+
+        <div class="skill-bars">
+            <div class="skill-item">
+                <span class="skill-name">&#x2734; FRONTEND DEV</span>
+                <div class="skill-bar-track"><div class="skill-bar-fill gold" data-width="95%"></div></div>
+                <span class="skill-value">95%</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">&#x2734; BACKEND DEV</span>
+                <div class="skill-bar-track"><div class="skill-bar-fill gold" data-width="90%"></div></div>
+                <span class="skill-value">90%</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">&#x2734; SYSTEM ARCHITECTURE</span>
+                <div class="skill-bar-track"><div class="skill-bar-fill red" data-width="85%"></div></div>
+                <span class="skill-value">85%</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">&#x2734; DATABASE DESIGN</span>
+                <div class="skill-bar-track"><div class="skill-bar-fill red" data-width="80%"></div></div>
+                <span class="skill-value">80%</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">&#x2734; DEVOPS & CI/CD</span>
+                <div class="skill-bar-track"><div class="skill-bar-fill gold" data-width="75%"></div></div>
+                <span class="skill-value">75%</span>
+            </div>
+        </div>
+
+        <!-- Klingon Terminal -->
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-dot red"></div>
+                <div class="terminal-dot yellow"></div>
+                <div class="terminal-dot green"></div>
+                <span>KLINON TERMINAL v4.2 — warrior@q-pacha ~ %</span>
+            </div>
+            <div class="terminal-body">
+<pre><span class="prompt">warrior@q-chacha:~$</span> <span class="command">cat ~/. Klingon-philosophy.txt</span>
+
+<span class="output">  "Die wahre Kraft liegt nicht in dem Schwert, sondern in dem Code."</span>
+<span class="output">  — Klingonischer Weiser, Ära des Großen Klingonen-Krieges</span>
+
+<span class="prompt">warrior@q-chacha:~$</span> <span class="command">grep -r "Ehre" /usr/local/code --recursive</span>
+/usr/local/code/src/honor.py:    def ehre(self): return True  # It compiles – Qapla'!
+/usr/local/code/src/battle.py:    print("Victory is mine! Die Ehre der Klingonen lebt!")
+
+<span class="prompt">warrior@q-chacha:~$</span> <span class="command">echo $KLIGNON_STATUS</span>
+<span class="highlight">STATUS: BEREIT ZUM KAMPF · CODE IS HONOR · WARRIOR MODE: ACTIVE</span></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <div class="divider"></div>
+    <section id="contact">
+        <h2>KONTAKT</h2>
+        <div class="section-line"></div>
+        <p style="color: var(--klingon-dim); font-size: 1.1rem;">
+            Fehlermeldungen sind Ehrensache – aber Bugs sterben mit Würde.
+        </p>
+
+        <div class="contact-links">
+            <a href="mailto:kling0ne@example.com" title="E-Mail senden" class="contact-link" aria-label="E-Mail an KLiNG0NE senden">&#x2709; E-MAIL</a>
+            <a href="https://github.com/kling0ne" title="github.com" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="GitHub Profil von KLiNG0NE">
+                &#x2328; GITHUB
+            </a>
+            <a href="https://www.youtube.com/@KLiNG0N3" title="youtube.com" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="YouTube-Kanal von KLiNG0NE">
+                &#9654; YOUTUBE
+            </a>
+            <a href="https://www.twitch.tv/kling0n3" title="twitch.tv" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Twitch-Kanal von KLiNG0NE">
+                &#128377; TWITCH
+            </a>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <p>Made with &#x2661; by "KLiNG0NE" · &copy; <span id="footer-year"></span> <a href="https://kling0ne.github.io/">kling0ne.github.io</a></p>
+        <p style="margin-top: 0.5rem; font-size: 0.7rem; color: var(--klingon-dim);">
+            "404&nbsp;– Wäre ein glorreicher Tod."
+        </p>
+    </footer>
+
+    <!-- ==================== ANIMATION SCRIPTS ==================== -->
+    <script>
+        // Animate skill bars on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const fills = entry.target.querySelectorAll('.skill-bar-fill');
+                    fills.forEach(fill => {
+                        fill.style.width = fill.dataset.width;
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelector('#skills') && observer.observe(document.querySelector('#skills'));
+
+        // Animate hero content on DOM ready (ensures animation is visible even on slow connections)
+        document.addEventListener('DOMContentLoaded', () => {
+            const hero = document.querySelector('.hero-content');
+            if (hero) hero.classList.add('animate-in');
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Parallax effect on hero particles (passive for performance)
+        window.addEventListener('scroll', () => {
+            const particles = document.getElementById('hero-particles');
+            if (particles) {
+                particles.style.transform = `translateY(${window.scrollY * 0.2}px)`;
+            }
+        }, { passive: true });
+
+        // Dynamic footer year
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+        // Console easter egg
+        console.log('%c &#x1F3B9; KLIGNON WARRIOR MODE ACTIVATED ', 'background: #b21010; color: #c8a419; font-size: 16px; font-weight: bold;');
+        console.log('%c "Der Code ist die Ehre der Klingonen" — KLINGONISCHER WEISER', 'color: #8a7a5a; font-style: italic;');
+    </script>
+</body>
 </html>
