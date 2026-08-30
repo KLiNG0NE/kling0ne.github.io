@@ -345,6 +345,27 @@
             color: var(--klingon-dim); font-size: 0.95rem; line-height: 1.7;
         }
 
+        .project-card a {
+            color: var(--klingon-gold);
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            text-decoration: none;
+            padding: 0.3rem 0.8rem;
+            margin-top: 0.8rem;
+            display: inline-block;
+            transition: color 0.3s, text-shadow 0.3s, transform 0.2s;
+        }
+
+        .project-card a:hover,
+        .project-card a:focus {
+            color: var(--klingon-light);
+            text-shadow: 0 0 8px rgba(200,164,25,0.4);
+            outline: none;
+            transform: translateY(-2px);
+        }
+
         /* ==================== SKILLS SECTION (Warrior Readiness) ==================== */
 
         .skill-bars { margin-top: 2rem; }
@@ -590,7 +611,7 @@
         <h2>ÜBER MICH</h2>
         <div class="section-line"></div>
         <p style="color: var(--klingon-dim); font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
-            Schon in meiner Kindheit konnte ich meinen ersten Computer (Commodore 116) mein Eigen nennen. Darauf folgten Commodore Plus/4 sowie C64. Während meiner Ausbildung konnte ich dann den ersten IBM-PC (i&nbsp;386 DX) in meine Sammlung aufnehmen. Seither beschäftige ich mich intensiv mit Hardware sowie Open-Source-Software. Aktuell beschäftige ich mit den Möglichkeiten die KI bietet.
+            Schon in meiner Kindheit konnte ich meinen ersten Computer (Commodore 116) mein Eigen nennen. Darauf folgten Commodore Plus/4 sowie C64. Während meiner Ausbildung konnte ich dann den ersten IBM-PC (i&nbsp;386&nbsp;DX) mit dem damaligen Windows&nbsp;3.1 in meine Sammlung aufnehmen.&nbsp;– Seither beschäftige ich mich intensiv mit Hardware sowie Open-Source-Software.&nbsp;– Aktuell beschäftige ich mich viel mit Virtualisierung sowie den erstaunlichen Möglichkeiten, die KI bietet.
         </p>
 
         <div class="about-grid">
@@ -618,7 +639,7 @@
 
         <div class="project-grid">
             <div class="project-card">
-                <h3>&#x26A0; TIPPS UND TRICKS</h3>
+                <h3>&#9432; TIPPS UND TRICKS</h3>
                 <p>Dieser Bereich dient mir als persönlicher Spickzettel, auf dem ich nützliche Tipps, Kniffe und Informationen zu verschiedenen Themen festhalte, um sie bei Bedarf schnell wiederzufinden.</p>
                 <div class="tech-stack">
                     <span class="tag">MD</span>
@@ -626,6 +647,9 @@
                     <span class="tag">JPEG</span>
                     <span class="tag">PNG</span>
                 </div>
+                <p>
+                    <a href="https://github.com/KLiNG0NE/Tipps-und-Tricks">GitHub</a>
+                </p>
             </div>
 
             <div class="project-card">
@@ -636,16 +660,18 @@
                     <span class="tag">CSS</span>
                     <span class="tag">JAVASCRIPT</span>
                 </div>
+                <p><a href="https://kling0ne.github.io/M3U-Player/">Online</a>&nbsp;&bigcirc; <a href="https://github.com/KLiNG0NE/M3U-Player">GitHub</a></p>
             </div>
 
             <div class="project-card">
-                <h3>&#128203; M3U-EDITOR</h3>
-                <p>Ein Editor um M3U-Playlisten zu erstellen und zu Sortieren. Dieser Editor ist für Playlisten gedacht, die TV- und Radio-Programme enthalten. Diese Playliste kann dann z. B. in KODI genutzt werden.</p>
+                <h3>&#128463; M3U-EDITOR</h3>
+                <p>Ein Editor um M3U-Playlisten zu erstellen und zu Sortieren. Dieser Editor ist für Playlisten gedacht, die TV- und Radio-Programme enthalten. Diese Playliste kann dann z.&nbsp;B. in KODI genutzt werden.</p>
                 <div class="tech-stack">
                     <span class="tag">HTML</span>
                     <span class="tag">CSS</span>
                     <span class="tag">JAVASCRIPT</span>
                 </div>
+                <p><a href="https://kling0ne.github.io/M3U-Editor/">Online</a>&nbsp;&bigcirc; <a href="https://github.com/KLiNG0NE/M3U-Editor">GitHub</a></p>
             </div>
 
             <div class="project-card">
@@ -747,7 +773,7 @@
 
     <!-- ==================== FOOTER ==================== -->
     <footer>
-        <p>Made with &#x2661; by "KLiNG0NE" · &copy; <span id="footer-year"></span> <a href="https://kling0ne.github.io/">kling0ne.github.io</a></p>
+        <p>Made with &#9829;&#65039; and &#9875; by "KLiNG0NE" · &copy; <span id="footer-year"></span> <a href="https://kling0ne.github.io/">kling0ne.github.io</a></p>
         <p style="margin-top: 0.5rem; font-size: 0.7rem; color: var(--klingon-dim);">
             "404&nbsp;– Wäre ein glorreicher Tod."
         </p>
