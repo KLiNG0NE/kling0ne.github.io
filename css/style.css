@@ -43,3 +43,10 @@ footer {
   letter-spacing: 0.1em;
   text-align: center;
 }
+
+/* Markierter Text */
+::selection {
+  background: red;
+  color: yellow;
+}
+
